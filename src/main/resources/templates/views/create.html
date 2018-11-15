@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlsn:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,6 +8,23 @@
     <title>Document</title>
 </head>
 <body>
-    Hello
+<form th:action="@{/create-employee}" th:object="${employee}" method="post">
+    <table>
+        <tr>
+            <td>Mã nhân viên:</td>
+            <td><input type="text" th:field="*{id}"></td>
+        </tr>
+
+        <tr>
+            <td>Họ tên:</td>
+            <td><input type="text" th:field="*{name}"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Create a new employee"/></td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>
